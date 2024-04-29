@@ -1,6 +1,6 @@
 provider "aws" {
-  region  = "us-west-1" #change to your preferred AWS region
-  profile = "<My-AWS-profile" # AWS CLI profile name
+  region  = "us-west-2" #change to your preferred AWS region
+  profile = "sandpit5" # AWS CLI profile name
 }
 
 provider "helm" {
