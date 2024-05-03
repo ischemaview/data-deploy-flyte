@@ -18,10 +18,10 @@ module "flyte_db" {
   master_username        = "flyteadmin"
   
 #Comment to disable random password generation for the DB
-  random_password_length = 63
+  #random_password_length = 63
 
 #Uncomment and update the value to set a specific password for the DB.
-  #master_password = "my-db-password"
+  master_password = "e279qQzJdocpgXo3f7DnRG()12"
   
  
 

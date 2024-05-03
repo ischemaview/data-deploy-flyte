@@ -1,21 +1,21 @@
 
  data "aws_route53_zone" "zone" {
-  name = "example.run."  # Change this to your Route53 managed zone
+  name = "sandpit5.rapidai.com."  # Change this to your Route53 managed zone
 }
 
 resource "aws_route53_record" "cname_record" {
   zone_id = data.aws_route53_zone.zone.zone_id
-  name    = "change-me"  # Replace with your desired subdomain
+  name    = "flyte"  # Replace with your desired subdomain
   type    = "CNAME"
-  ttl     = 300  # Time to Live in seconds
+  ttl     = 60  # Time to Live in seconds
 
-  records = ["change-me.example"] #Once Flyte is deployed, you can change this with the ALB
+  records = ["k8s-flyte-91c5752089-1140960138.us-west-2.elb.amazonaws.com"] #Once Flyte is deployed, you can change this with the ALB
 
   allow_overwrite = true
 }
 # Change domain_name to match the name you'll use to connect to Flyte
 resource "aws_acm_certificate" "flyte_cert" {
-  domain_name       = "flyte.example.run"
+  domain_name       = "flyte.sandpit5.rapidai.com"
   validation_method = "DNS"
 
   lifecycle {

@@ -27,7 +27,7 @@ terraform {
 
   backend "s3" {
     profile = "sandpit5" #AWS CLI profile name
-    bucket  = "rapidai-flyte-state" #create an S3 bucket to store Terraform state
+    bucket  = "flyte-sandpit5-rapidai-state" #create an S3 bucket to store Terraform state
     key     = "terraform.tfstate"
     region  = "us-west-2" #AWS region where the bucket was created
   }
