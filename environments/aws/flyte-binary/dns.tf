@@ -7,7 +7,7 @@ resource "aws_route53_record" "cname_record" {
   zone_id = data.aws_route53_zone.zone.zone_id
   name    = "flyte"  # Replace with your desired subdomain
   type    = "CNAME"
-  ttl     = 60  # Time to Live in seconds
+  ttl     = 300  # Time to Live in seconds
 
   records = ["k8s-flyte-91c5752089-1140960138.us-west-2.elb.amazonaws.com"] #Once Flyte is deployed, you can change this with the ALB
 
